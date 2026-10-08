@@ -45,8 +45,8 @@ export function ItemList() {
               </TableRow>
             ) : (
               // replace the following hardcoded row with the dynamic mapping of data items
-              inventory.map((item, idx) => (
-                <TableRow key={idx}>
+              inventory.map((item) => (
+                <TableRow key={item.id}>
                   <TableCell>
                     <Badge variant="outline">{item.category}</Badge>
                   </TableCell>

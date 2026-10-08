@@ -20,9 +20,12 @@ export function DashboardTabs() {
         </Button>
       </div>
 
-      {dashType === "overview" ?
-        <OverviewCards />
-        : <CategoryCards />}
+      <div className="min-h-37.5">
+        {dashType === "overview" ?
+          <OverviewCards />
+          : <CategoryCards />}
+      </div>
+
 
     </div>
   );
