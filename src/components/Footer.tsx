@@ -1,7 +1,7 @@
 import { StudentInfo } from "./StudentInfo";
 import { Drawer, DrawerClose, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, DrawerTitle, DrawerTrigger } from "@/components/ui/drawer";
 import { Button } from "@/components/ui/button";
-import { Card, CardAction, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from "@/components/ui/badge";
 
 export function Footer() {
@@ -13,9 +13,7 @@ export function Footer() {
 
             <Drawer swipeDirection="right">
               <DrawerTrigger>
-                <button type="button" className="focus:outline-none">
-                  <StudentInfo />
-                </button>
+                <StudentInfo />
               </DrawerTrigger>
 
               <DrawerContent>

@@ -4,20 +4,15 @@ import { useEffect, useState } from 'react';
 
 export function OverviewCards() {
   const inventory = useItemStore((state) => state.inventory);
-  console.log(inventory);
+  // console.log(inventory);
   
   const totalProducts = inventory.length;
   const [totalPrice, setTotalPrice] = useState<number>(0);
   const [totalUnits, setTotalUnits] = useState<number>(0);
 
   useEffect(() => {
-    let sum = 0;
-    let units = 0;
-
-    inventory.forEach((item) => {
-      sum += (item.price * item.quantity);
-      units += item.quantity;
-    })
+    let sum = inventory.reduce((acc, item) => acc + item.quantity * item.price, 0);
+    let units = inventory.reduce((acc, item) => acc + item.quantity, 0);
 
     setTotalPrice(sum);
     setTotalUnits(units);
