@@ -24,7 +24,7 @@ export function CategoryCards() {
 
   return (
     <div className="grid gap-2 md:grid-cols-6">
-      {categoryOptions.map((category) => {
+      {categoryOptions.map((category, idx) => {
         const categoryItems = inventory.filter(
           (item) => item.category === category.value,
         );
@@ -39,7 +39,7 @@ export function CategoryCards() {
 
         return (
           // Use Card component to display values by category
-          <Card className="px-0">
+          <Card key={idx} className="px-0">
             <CardHeader>
               <CardTitle className="text-sm">
                 {iconMap[category.label]}
